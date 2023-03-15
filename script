@@ -1,4 +1,7 @@
 # Imports
 source colors.sh
+source commands.sh
+source file_explorer.sh
+
 clear
 source menu.sh

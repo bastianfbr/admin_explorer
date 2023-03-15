@@ -1,6 +1,3 @@
-# Imports
-source colors.sh
-
 function head {
     echo "$(color_text 'blanc' 'Répertoire courant : ')$(color_text 'jaune_fonce' $(pwd))"
 }

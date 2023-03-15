@@ -1,8 +1,3 @@
-# Imports
-source colors.sh
-source commands.sh
-source file_explorer.sh
-
 # Fonction pour afficher le menu
 function afficher_menu {
     color_text "blanc" "Menu principal :"
@@ -21,6 +16,8 @@ while true; do
     # Demander à l'utilisateur de faire un choix
     read -p "Entrez votre choix : " choix
 
+    clear
+    
     # Traiter le choix de l'utilisateur
     case $choix in
         1)
