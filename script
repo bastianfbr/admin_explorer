@@ -1,0 +1,4 @@
+# Imports
+source colors.sh
+clear
+source menu.sh
