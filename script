@@ -1,7 +1,8 @@
 # Imports
-source colors.sh
+source ./modules/colors.sh
+source ./menus/menu_recherche_fichiers.sh
 source commands.sh
 source file_explorer.sh
 
 clear
-source menu.sh
+source ./menus/menu_principal.sh
