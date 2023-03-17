@@ -1,8 +1,8 @@
 # Fonction pour afficher le menu
-function afficher_menu {
+function menu_principal {
     color_text "blanc" "Menu principal :"
     color_text "noir" "1. Infos répertoire courant"
-    color_text "noir" "2. //"
+    color_text "noir" "2. Rechercher fichiers"
     color_text "noir" "3. //"
     color_text "rouge_fonce" "4. Quitter"
 }
@@ -11,7 +11,7 @@ function afficher_menu {
 while true; do
     infos_system
     # Afficher le menu
-    afficher_menu
+    menu_principal
 
     # Demander à l'utilisateur de faire un choix
     read -p "Entrez votre choix : " choix
@@ -24,12 +24,15 @@ while true; do
             head
             fichier_repertoire_courant
             nb_sous_repertoires
+            arborescence
+            poids_sous_repertoires
+            changer_repertoire
             ;;
         2)
-            command2
+            menu_recherche_fichiers
             ;;
         3)
-            command3
+            echo "Choix 3"
             ;;
         4)
             echo "Au revoir !"
