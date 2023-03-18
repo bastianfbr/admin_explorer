@@ -1,8 +1,9 @@
 # Imports
-source ./modules/colors.sh
-source ./menus/menu_recherche_fichiers.sh
-source commands.sh
-source file_explorer.sh
+SCRIPTPATH="$(dirname $(readlink -f $0))"
+source "$SCRIPTPATH/modules/colors.sh"
+source "$SCRIPTPATH/menus/menu_recherche_fichiers.sh"
+source "$SCRIPTPATH/commands.sh"
+source "$SCRIPTPATH/file_explorer.sh"
 
 clear
-source ./menus/menu_principal.sh
+source "$SCRIPTPATH/menus/menu_principal.sh"
