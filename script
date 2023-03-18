@@ -1,9 +1,10 @@
 # Imports
 SCRIPTPATH="$(dirname $(readlink -f $0))"
+
 source "$SCRIPTPATH/modules/colors.sh"
 source "$SCRIPTPATH/menus/menu_recherche_fichiers.sh"
 source "$SCRIPTPATH/commands.sh"
 source "$SCRIPTPATH/file_explorer.sh"
 
-clear
+
 source "$SCRIPTPATH/menus/menu_principal.sh"
