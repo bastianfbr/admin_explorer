@@ -81,3 +81,26 @@ function chercher_fichiers_courant_date {
     fi
     done
 }
+
+function chercher_fichiers_sous_repertoire_date {
+    echo "$(color_text 'jaune_fonce' 'Veuillez entrer la date au format YYYY-MM-DD : ')"
+    read dossier
+
+    # Vérifier si une date est fournie en paramètre
+    if [[ -z "$dossier" ]]; then
+        echo "Veuillez fournir une date au format YYYY-MM-DD en paramètre."
+        exit 1
+    fi
+
+    # Vérifier si la date fournie est valide
+    if ! date -d "$dossier" >/dev/null 2>&1; then
+        echo "La date fournie n'est pas valide. Veuillez fournir une date au format YYYY-MM-DD."
+        exit 1
+    fi
+
+    # Récupérer la date en format numérique pour la comparer avec la date de modification des fichiers
+    date_num=$(date -d "$dossier" +%s)
+
+    # Rechercher les fichiers plus récents que la date spécifiée dans tous les sous-répertoires du répertoire courant
+    find . -type f -newermt "$dossier" -print
+}
