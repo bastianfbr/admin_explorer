@@ -9,6 +9,7 @@ function menu_principal {
 
 # Boucle pour afficher le menu et traiter les choix de l'utilisateur
 while true; do
+    clear
     infos_system
     # Afficher le menu
     menu_principal
