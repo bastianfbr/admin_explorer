@@ -1,10 +1,16 @@
 # Fonction pour afficher le menu
 function menu_principal {
-    color_text "blanc" "Menu principal :"
-    color_text "noir" "1. Infos répertoire courant"
-    color_text "noir" "2. Rechercher fichiers"
-    color_text "noir" "3. //"
+    clear
+    color_text "cyan_fonce" "============================================="
+    color_text "cyan_fonce" "               MENU PRINCIPAL                "
+    color_text "cyan_fonce" "============================================="
+    echo ""
+    color_text "vert_clair" "1. Explorateur de fichiers"
+    color_text "vert_clair" "2. Explorateur de processus"
+    color_text "vert_clair" "3. Explorateur de services"
+    echo ""
     color_text "rouge_fonce" "4. Quitter"
+    echo ""
 }
 
 # Boucle pour afficher le menu et traiter les choix de l'utilisateur
@@ -22,15 +28,10 @@ while true; do
     # Traiter le choix de l'utilisateur
     case $choix in
         1)
-            head
-            fichier_repertoire_courant
-            nb_sous_repertoires
-            arborescence
-            poids_sous_repertoires
-            changer_repertoire
+            menu_file_explorer
             ;;
         2)
-            menu_recherche_fichiers
+            echo "Choix 2"
             ;;
         3)
             echo "Choix 3"
