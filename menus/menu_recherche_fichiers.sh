@@ -46,6 +46,18 @@ function menu_recherche_fichiers {
         8)
             chercher_fichiers_poids 'sous' 'moins'
             ;;
+        9)
+            chercher_fichiers_extension 'courant'
+            ;;
+        10)
+            chercher_fichiers_extension 'sous'
+            ;;
+        11)
+            chercher_fichiers_nom 'courant'
+            ;;
+        12)
+            chercher_fichiers_nom 'sous'
+            ;;
         *)
             echo "Choix invalide, veuillez sélectionner une option entre 1 et 2."
             ;;

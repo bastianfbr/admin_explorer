@@ -152,3 +152,45 @@ function chercher_fichiers_poids {
         fi
     fi
 }
+
+function chercher_fichiers_extension {
+    local option_dossier=$1
+    # Demander à l'utilisateur l'extension de fichier à chercher
+    echo "Entrez l'extension de fichier à chercher : " 
+    read extension
+    
+    if [[ "$option_dossier" == "courant" ]]; then
+        fichiers=$(ls *.$extension 2>/dev/null)
+    elif [[ "$option_dossier" == "sous" ]]; then
+        fichiers=$(find . -type f -name "*.$extension" -print)
+    fi
+    
+    if [[ -n "$fichiers" ]]; then
+        echo "Les fichiers avec l'extension .$extension sont :"
+        echo "$fichiers"
+    else
+        echo "Aucun fichier avec l'extension .$extension n'a été trouvé."
+    fi
+}
+
+function chercher_fichiers_nom {
+    local option_dossier=$1
+    # Demander à l'utilisateur la chaîne de caractères à chercher
+    read -p "Entrez la chaîne de caractères à chercher : " chaine
+
+    if [[ "$option_dossier" == "courant" ]]; then
+        fichiers=$(find . -maxdepth 1 -type f -name "*$chaine*")
+    elif [[ "$option_dossier" == "sous" ]]; then
+        fichiers=$(find . -type f -name "*$chaine*")
+    fi
+
+    # Afficher le résultat
+    if [[ -z "$fichiers" ]]; then
+        echo "Aucun fichier trouvé."
+    else
+        echo "Les fichiers suivants ont été trouvés :"
+        echo "$fichiers"
+    fi
+}
+
+
