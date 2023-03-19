@@ -23,10 +23,10 @@ function menu_recherche_fichiers {
     read -p "Entrez votre choix : " choix2
     case $choix2 in
         1)
-            chercher_fichiers_courant_date
+            chercher_fichiers_date 'courant'
             ;;
         2)
-            chercher_fichiers_sous_repertoire_date
+            chercher_fichiers_date 'sous'
             ;;
         *)
             echo "Choix invalide, veuillez sélectionner une option entre 1 et 2."
