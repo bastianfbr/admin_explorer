@@ -1,8 +1,7 @@
 # Fonction pour afficher le menu
 function menu_principal {
-    clear
     color_text "cyan_fonce" "============================================="
-    color_text "cyan_fonce" "               MENU PRINCIPAL                "
+    color_text "cyan_fonce" "               ADMIN EXPLORER                "
     color_text "cyan_fonce" "============================================="
     echo ""
     color_text "vert_clair" "1. Explorateur de fichiers"
