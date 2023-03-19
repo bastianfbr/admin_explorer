@@ -54,7 +54,8 @@ function changer_repertoire {
 
 function chercher_fichiers_date {
 
-    local option=$1
+    local option_dossier=$1
+    local option_date=$2
 
     echo "$(color_text 'jaune_fonce' 'Veuillez entrer la date au format YYYY-MM-DD : ')"
     read dossier
@@ -74,17 +75,34 @@ function chercher_fichiers_date {
     # Récupérer la date en format numérique pour la comparer avec la date de modification des fichiers
     date_num=$(date -d "$dossier" +%s)
 
-    if [[ "$option" == "courant" ]]; then
-        # Rechercher les fichiers plus récents que la date spécifiée
-        for file in *; do
-        if [[ -f "$file" ]]; then
-            if [[ $(stat -c %Y "$file") -gt $date_num ]]; then
-                echo "$file"
+    if [[ "$option_date" == "recent" ]]; then
+        if [[ "$option_dossier" == "courant" ]]; then
+            # Rechercher les fichiers plus récents que la date spécifiée
+            for file in *; do
+            if [[ -f "$file" ]]; then
+                if [[ $(stat -c %Y "$file") -gt $date_num ]]; then
+                    echo "$file"
+                fi
             fi
+            done
+        elif [[ "$option_dossier" == "sous" ]]; then
+            # Rechercher les fichiers plus récents que la date spécifiée dans tous les sous-répertoires du répertoire courant
+            find . -type f -newermt "$dossier" -print
         fi
-        done
-    elif [[ "$option" == "sous" ]]; then
-        # Rechercher les fichiers plus récents que la date spécifiée dans tous les sous-répertoires du répertoire courant
-        find . -type f -newermt "$dossier" -print
+
+    elif [[ "$option_date" == "ancien" ]]; then
+        if [[ "$option_dossier" == "courant" ]]; then
+            # Rechercher les fichiers plus anciens que la date spécifiée
+            for file in *; do
+            if [[ -f "$file" ]]; then
+                if [[ $(stat -c %Y "$file") -lt $date_num ]]; then
+                    echo "$file"
+                fi
+            fi
+            done
+        elif [[ "$option_dossier" == "sous" ]]; then
+            # Rechercher les fichiers plus anciens que la date spécifiée dans tous les sous-répertoires du répertoire courant
+            find . -type f ! -newermt "$dossier" -print
+        fi
     fi
 }
