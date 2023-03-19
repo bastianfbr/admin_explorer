@@ -106,3 +106,49 @@ function chercher_fichiers_date {
         fi
     fi
 }
+
+function chercher_fichiers_poids {
+    local option_dossier=$1
+    local option_poids=$2
+
+    echo "$(color_text 'jaune_fonce' 'Veuillez entrer la taille en octets : ')"
+    read taille
+
+    # Vérifier si une taille est fournie en paramètre
+
+    if [[ -z "$taille" ]]; then
+        echo "Veuillez fournir une taille en octets en paramètre."
+        exit 1
+    fi
+
+    if [[ "$option_poids" == "plus" ]]; then
+        if [[ "$option_dossier" == "courant" ]]; then
+            # Rechercher les fichiers plus lourds que la taille spécifiée
+            for file in *; do
+            if [[ -f "$file" ]]; then
+                if [[ $(stat -c %s "$file") -gt $taille ]]; then
+                    echo "$file"
+                fi
+            fi
+            done
+        elif [[ "$option_dossier" == "sous" ]]; then
+            # Rechercher les fichiers plus lourds que la taille spécifiée dans tous les sous-répertoires du répertoire courant
+            find . -type f -size +$taille -print
+        fi
+
+    elif [[ "$option_poids" == "moins" ]]; then
+        if [[ "$option_dossier" == "courant" ]]; then
+            # Rechercher les fichiers plus légers que la taille spécifiée
+            for file in *; do
+            if [[ -f "$file" ]]; then
+                if [[ $(stat -c %s "$file") -lt $taille ]]; then
+                    echo "$file"
+                fi
+            fi
+            done
+        elif [[ "$option_dossier" == "sous" ]]; then
+            # Rechercher les fichiers plus légers que la taille spécifiée dans tous les sous-répertoires du répertoire courant
+            find . -type f -size -$taille -print
+        fi
+    fi
+}
