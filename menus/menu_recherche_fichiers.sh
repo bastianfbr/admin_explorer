@@ -23,10 +23,28 @@ function menu_recherche_fichiers {
     read -p "Entrez votre choix : " choix2
     case $choix2 in
         1)
-            chercher_fichiers_date 'courant'
+            chercher_fichiers_date 'courant' 'recent'
             ;;
         2)
-            chercher_fichiers_date 'sous'
+            chercher_fichiers_date 'sous' 'recent'
+            ;;
+        3)
+            chercher_fichiers_date 'courant' 'ancien'
+            ;;
+        4)
+            chercher_fichiers_date 'sous' 'ancien'
+            ;;
+        5)
+            chercher_fichiers_poids 'courant' 'plus'
+            ;;
+        6)
+            chercher_fichiers_poids 'courant' 'moins'
+            ;;
+        7)
+            chercher_fichiers_poids 'sous' 'plus'
+            ;;
+        8)
+            chercher_fichiers_poids 'sous' 'moins'
             ;;
         *)
             echo "Choix invalide, veuillez sélectionner une option entre 1 et 2."
