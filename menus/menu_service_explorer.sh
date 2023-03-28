@@ -1,4 +1,7 @@
 #!/bin/bash
+
+source file_explorer.sh;
+
 while true; do
     clear
     echo "============================================="
