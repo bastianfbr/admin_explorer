@@ -1,7 +1,4 @@
-#!/bin/bash
-
-source file_explorer.sh;
-
+function menu_service_explorer {
 while true; do
     clear
     echo "============================================="
@@ -47,3 +44,5 @@ while true; do
             ;;
     esac
 done
+
+}
