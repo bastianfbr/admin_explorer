@@ -33,7 +33,7 @@ while true; do
             echo "Choix 2"
             ;;
         3)
-            echo "Choix 3"
+            menu_service_explorer  
             ;;
         4)
             echo "Au revoir !"
