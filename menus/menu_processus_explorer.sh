@@ -1,12 +1,15 @@
 function menu_processus_explorer {
-    echo "Menu interactif pour explorer les processus"
-    echo "1. Afficher tous les processus et leur propriétaire"
-    echo "2. Afficher les processus actifs et leur propriétaire"
-    echo "3. Afficher les processus d'un utilisateur donné"
-    echo "4. Afficher les processus consommant le plus de mémoire et leur propriétaire"
-    echo "5. Afficher les processus dont le nom contient une chaîne de caractères donnée"
-    echo "6. Écrire les résultats de la recherche actuelle dans un fichier"
-    echo "7. Quitter"
+   color_text "cyan_fonce" "============================================="
+   color_text "cyan_fonce" "           PROCESSUS EXPLORER                "
+   color_text "cyan_fonce" "============================================="
+   echo ""
+   color_text "gris_clair" "1. Afficher tous les processus et leur propriétaire"
+   color_text "gris_clair" "2. Afficher les processus actifs et leur propriétaire"
+   color_text "gris_clair" "3. Afficher les processus d'un utilisateur donné"
+   color_text "gris_clair" "4. Afficher les processus consommant le plus de mémoire et leur propriétaire"
+   color_text "gris_clair" "5. Afficher les processus dont le nom contient une chaîne de caractères donnée"
+   color_text "gris_clair" "6. Écrire les résultats de la recherche actuelle dans un fichier"
+   color_text "rouge_fonce" "7. Quitter"
     echo -n "Votre choix : "
     read choice
     case $choice in
