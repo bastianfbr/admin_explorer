@@ -1,18 +1,18 @@
 function menu_service_explorer {
 while true; do
     clear
-    echo "============================================="
-    echo "         GESTIONNAIRE DE SERVICES SYSTEME     "
-    echo "============================================="
+    color_text "cyan_fonce" "============================================="
+    color_text "cyan_fonce" "         GESTIONNAIRE DE SERVICES SYSTEME    "
+    color_text "cyan_fonce" "============================================="
     echo ""
-    echo "1. Afficher les services disponibles/installés"
-    echo "2. Afficher les services actifs"
-    echo "3. Vérifier le statut d'un service"
-    echo "4. Démarrer un service"
-    echo "5. Arrêter un service"
-    echo "6. Redémarrer un service"
+    color_text "blanc" "1. Afficher les services disponibles/installés"
+    color_text "blanc" "2. Afficher les services actifs"
+    color_text "blanc" "3. Vérifier le statut d'un service"
+    color_text "blanc" "4. Démarrer un service"
+    color_text "blanc" "5. Arrêter un service"
+    color_text "blanc" "6. Redémarrer un service"
     echo ""
-    echo "7. Quitter"
+    color_text "rouge_fonce" "7. Quitter"
     echo ""
     read -p "Entrez votre choix : " option
     clear

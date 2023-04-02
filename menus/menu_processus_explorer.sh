@@ -3,15 +3,16 @@ function menu_processus_explorer {
    color_text "cyan_fonce" "           PROCESSUS EXPLORER                "
    color_text "cyan_fonce" "============================================="
    echo ""
-   color_text "gris_clair" "1. Afficher tous les processus et leur propriétaire"
-   color_text "gris_clair" "2. Afficher les processus actifs et leur propriétaire"
-   color_text "gris_clair" "3. Afficher les processus d'un utilisateur donné"
-   color_text "gris_clair" "4. Afficher les processus consommant le plus de mémoire et leur propriétaire"
-   color_text "gris_clair" "5. Afficher les processus dont le nom contient une chaîne de caractères donnée"
-   color_text "gris_clair" "6. Écrire les résultats de la recherche actuelle dans un fichier"
+   color_text "blanc" "1. Afficher tous les processus et leur propriétaire"
+   color_text "blanc" "2. Afficher les processus actifs et leur propriétaire"
+   color_text "blanc" "3. Afficher les processus d'un utilisateur donné"
+   color_text "blanc" "4. Afficher les processus consommant le plus de mémoire et leur propriétaire"
+   color_text "blanc" "5. Afficher les processus dont le nom contient une chaîne de caractères donnée"
+   color_text "blanc" "6. Écrire les résultats de la recherche actuelle dans un fichier"
+   echo ""
    color_text "rouge_fonce" "7. Quitter"
-    echo -n "Votre choix : "
-    read choice
+    echo ""
+    read -p "Entrez votre choix : " choice
     case $choice in
         1) list_all_processes ;;
         2) list_active_processes ;;
