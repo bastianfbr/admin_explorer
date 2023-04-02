@@ -8,6 +8,7 @@ source "$SCRIPTPATH/menus/menu_processus_explorer.sh"
 source "$SCRIPTPATH/menus/menu_service_explorer.sh"
 source "$SCRIPTPATH/commands.sh"
 source "$SCRIPTPATH/file_explorer.sh"
+source "$SCRIPTPATH/processus_explorer.sh"
 source "$SCRIPTPATH/service_explorer.sh"
 
 
