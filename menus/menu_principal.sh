@@ -30,7 +30,7 @@ while true; do
             menu_file_explorer
             ;;
         2)
-            echo "Choix 2"
+            menu_processus_explorer
             ;;
         3)
             menu_service_explorer  
