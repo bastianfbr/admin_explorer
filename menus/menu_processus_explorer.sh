@@ -13,6 +13,7 @@ function menu_processus_explorer {
    color_text "rouge_fonce" "7. Quitter"
     echo ""
     read -p "Entrez votre choix : " choice
+    clear
     case $choice in
         1) list_all_processes ;;
         2) list_active_processes ;;
